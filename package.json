@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/frankonerio/My_dairy#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
