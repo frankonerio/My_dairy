@@ -1,10 +1,11 @@
+import HomePageController from "../Controllers/HomePageController";
 import express from 'express';
-import HomePageController from '../Controllers/HomePageController';
 import path from 'path';
 
-const HomePageRouter = express.Router();
+const HomepageRouter = express.Router();
 
-HomePageRouter.get('/', HomePageController.fetchHomePage);
-HomePageRouter.use(express.static(path.join(__dirname, '..','..', '/UI')));
+HomepageRouter.use(express.static(path.join(__dirname, '..','..', '/UI')));
 
-export default HomePageRouter;
+HomepageRouter.get('/', HomePageController.fetchHomePage);
+
+export default HomepageRouter;

@@ -1,11 +1,16 @@
 import express from 'express';
-import IndexRouter from './IndexRouter';
-import HomePageRouter from './HomePageRouter';
+import IndexRouter from './indexRouter';
+import HomepageRouter from './HomePageRouter';
+import AllmemoriesRouter from './AllMemoriesRouter';
+import ViewMemoryRouter from './ViewMemoryRouter';
+import MemoryDeleteRouter from './MemoryDeleteRouter';
+import MemoryCreateRouter from './MemoryCreateRouter';
 
 const index = express.Router();
-// merge IndexRouter into index
-index.use(HomePageRouter);
-index.use(IndexRouter);
 
+index.use(express.json());
+// merge IndexRouter into index
+index.use(AllmemoriesRouter, HomepageRouter,ViewMemoryRouter, 
+IndexRouter, MemoryDeleteRouter, MemoryCreateRouter);
 
 export default index;
