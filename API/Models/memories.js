@@ -49,4 +49,5 @@ const memories = [
      },
   ];
 
-  export default memories;
+export default memories;
+  

@@ -8,8 +8,11 @@ export const getMemory = (id) => {
 };
 
 export const deleteMemory = (id) => {
+  
+    const remainingMemories = memories.filter(memory => memory.id !== +id);
+    memories.splice(0, memories.length);        // deletes all memories in the array
+    memories.push(...remainingMemories);         // pushes remaining memories into the empty array
 
-    memories = memories.filter(memory => memory.id !== +id);
 };
 
 export const createMemory = (title, story, mood, picture) => {
