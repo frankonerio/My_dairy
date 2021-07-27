@@ -4,7 +4,7 @@ class MemoryUpdateController {
 
     static updateMemory(request, response) {
 
-        const id = request.body.id
+        const id = request.params.id;
         const title = request.body.title;
         const mood = request.body.mood;
         const story = request.body.story;
@@ -12,7 +12,7 @@ class MemoryUpdateController {
       
         updateMemory(id, title, story, mood, picture);
 
-        return response.status(201).json({
+        return response.status(200).json({
             message:"Memory has been updated"
         }
         )

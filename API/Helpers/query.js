@@ -30,11 +30,17 @@ export const createMemory = (title, story, mood, picture) => {
 export const updateMemory = (id, title, story, mood, picture) => {
     const result = memories.findIndex(memory => memory.id === +id);
     memories[result] = {
-        id: id,
-        title: title,
-        mood: mood,
-        picture: picture,
-        story: story,
-        date: new Date()
+    id: id,
+    title: title,
+    mood: mood,
+    picture: picture,
+    story: story,
+    date: new Date(),
+    id: id,
+    title: title ?? memories[result].title,
+    mood: mood ?? memories[result].mood ,
+    picture: picture ?? memories[result].picture,
+    story: story ?? memories[result].story,
+    date: new Date() ?? memories[result].date
     };
 }
