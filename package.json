@@ -1,0 +1,39 @@
+{
+  "name": "my_dairy",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node API/server.js",
+    "start": "node build/server.js",
+    "test": "npm test",
+    "build": "npm run clean  && babel API --out-dir build",
+    "clean": "rm -rf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankonerio/My_dairy.git"
+  },
+  "keywords": [
+    "node",
+    "server"
+  ],
+  "author": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankonerio/My_dairy/issues"
+  },
+  "homepage": "https://github.com/frankonerio/My_dairy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "eslint": "^7.31.0",
+    "nodemon": "^2.0.12"
+  }
+}
