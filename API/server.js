@@ -3,9 +3,10 @@ import index from './Routes';
 
 const server = express();
 function displayServerMessage() {
-    return console.log('My Diary API server is listening on Port 8800');
+    return console.log('My Diary API server is listening on Port 8888');
 }
 server.use(index);
-server.listen(7000, displayServerMessage);
+const PORT = process.env.PORT || 8888;
+server.listen(PORT, displayServerMessage);
 
 export default server;
