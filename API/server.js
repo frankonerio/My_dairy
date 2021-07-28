@@ -1,7 +1,7 @@
 import express from 'express';
 import index from './Routes';
 
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 9200;
 const server = express();
 function displayServerMessage() {
     return console.log('My Diary API server is listening on Port 8888');
