@@ -1,4 +1,5 @@
 class IndexController {
+
     static fetchWelcomeMessage(request, response)
     {
         return response.json(
@@ -8,5 +9,6 @@ class IndexController {
             }
         );
     }
-  }
+  };
+
   export default IndexController;
