@@ -4,7 +4,7 @@ import express from 'express';
 import path from 'path';
 
 const HomepageRouter = express.Router();
-HomepageRouter.use(express.static(path.join(__dirname, '..','..', '/UI')));
+HomepageRouter.use(express.static(path.join(__dirname, '../../../UI/landingpage.html')));
 
 HomepageRouter.get('/', HomePageController.fetchHomePage);
 
