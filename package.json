@@ -1,12 +1,12 @@
 {
-  "name": "my_dairy",
+  "name": "my-diary",
   "version": "1.0.0",
-  "description": "server",
-  "main": "server.js",
+  "description": "",
   "engines": {
     "node": "14.11.0",
     "npm": "6.14.8"
   },
+  "main": "server.js",
   "scripts": {
     "start:dev": "nodemon --exec babel-node API/server.js",
     "start": "node build/server.js",
@@ -16,28 +16,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankonerio/My_dairy.git"
+    "url": "git+https://github.com/KennethNnalue/My-Diary.git"
   },
-  "keywords": [
-    "node",
-    "server"
-  ],
-  "author": "MIT",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/frankonerio/My_dairy/issues"
+    "url": "https://github.com/KennethNnalue/My-Diary/issues"
   },
-  "homepage": "https://github.com/frankonerio/My_dairy#readme",
+  "homepage": "https://github.com/KennethNnalue/My-Diary#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.14.8",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
     "@babel/node": "^7.14.7",
-    "@babel/preset-env": "^7.14.8",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
     "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "nodemon": "^2.0.12"
   }
-}
+} 
