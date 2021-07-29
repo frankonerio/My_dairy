@@ -1,4 +1,4 @@
-import HomePageController from "../Controllers/HomePageController";
+import HomePageController from '../Controllers/HomePageController';
 import express from 'express';
 import path from 'path';
 
