@@ -19,3 +19,4 @@ class MemoryCreateController {
 }
 
 export default MemoryCreateController;
+
