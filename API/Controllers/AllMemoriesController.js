@@ -1,4 +1,4 @@
-import memories from '../Models/memories'
+import memories from "../Data/memories"
 
 class AllMemoriesController {
   static fetchAllMemories (request, response) {
