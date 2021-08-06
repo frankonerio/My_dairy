@@ -1,8 +1,8 @@
-import express from 'express';
-import IndexController from '../Controllers/IndexController';
+import express from 'express'
+import IndexController from '../Controllers/IndexController'
 
-const IndexRouter = express.Router();
+const IndexRouter = express.Router()
 
-IndexRouter.get('/api/v1', IndexController.fetchWelcomeMessage);
+IndexRouter.get('/api/v1', IndexController.fetchWelcomeMessage)
 
-export default IndexRouter;
+export default IndexRouter
