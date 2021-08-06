@@ -1,18 +1,15 @@
-import {deleteMemory} from '../Helpers/query';
-
+import { deleteMemory } from '../Helpers/query'
 
 class MemoryDeleteController {
+  static deleteMemory (request, response) {
+    const diaryId = request.params.id
 
-    static deleteMemory(request, response) {
+    deleteMemory(diaryId)
 
-        const diaryId = request.params.id;
-
-        deleteMemory(diaryId);
-
-        return response.status(200).json({
-            message: "Memory have been deleted"
-        });
-    }
+    return response.status(200).json({
+      message: 'Memory have been deleted'
+    })
+  }
 }
 
-export default MemoryDeleteController;
+export default MemoryDeleteController
