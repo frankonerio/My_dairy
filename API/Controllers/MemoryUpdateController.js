@@ -1,20 +1,34 @@
 import { updateMemory } from '../Helpers/query'
 
+import models from '../models';
+
 class MemoryUpdateController {
-  static updateMemory (request, response) {
-    const id = request.params.id
-    const title = request.body.title
-    const mood = request.body.mood
-    const story = request.body.story
-    const picture = request.body.picture
+  static async updateMemory(request, response) {
+    try {
+      const [[result]] = await models.sequelize.query('UPDATE "Memories" SET "title" = :title, "story" = :story, "mood" = :mood, "picture" = :picture, "userId" = :userId,  "updatedAt" = :updatedAt WHERE ("userId" = :userId) AND ("id" = :id)   RETURNING *;', {
+        replacements: {
+          userId: request.userWallet.userId,
+          id: request.params.id,
+          title: request.body.title,
+          story: request.body.story,
+          picture: request.body.picture,
+          mood: request.body.mood,
+          updatedAt: new Date(Date.now())
 
-    updateMemory(id, title, story, mood, picture)
+        }
+      });
+      return response.status(200).json({
+        message: 'memory updated',
+        memory: result
+      });
+    } catch (e) {
+      return response.status(500).json({
+        message: 'Internal Sever Error',
+        error: e.toString()
 
-    return response.status(200).json({
-      message: 'Memory has been updated'
+      });
     }
-    )
   }
 }
 
-export default MemoryUpdateController
+export default MemoryUpdateController;
