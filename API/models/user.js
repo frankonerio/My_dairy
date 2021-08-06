@@ -1,8 +1,9 @@
 import sequelize from 'sequelize';
-const { Model } = sequelize;
 
+const { Model } = sequelize;
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
+    // eslint-disable-next-line valid-jsdoc
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -10,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      const { Memory } = models;
+      User.hasMany(Memory, { foreignKey: 'userId' });
     }
-  };
+  }
   User.init({
     name: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: { type: DataTypes.STRING, unique: true },
     password: DataTypes.STRING
   }, {
     sequelize,

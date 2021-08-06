@@ -1,15 +1,26 @@
-import { deleteMemory } from '../Helpers/query'
+import models from '../models';
 
 class MemoryDeleteController {
-  static deleteMemory (request, response) {
-    const diaryId = request.params.id
+  static async deleteMemory(request, response) {
+    try {
+      await models.sequelize.query('DELETE  FROM "Memories" WHERE ("userId" = :userId) AND ("id" = :id)', {
+        replacements: {
+          userId: request.userWallet.userId,
+          id: request.params.id
 
-    deleteMemory(diaryId)
+        }
+      });
+      return response.json({
+        message: 'memory deleted'
+      });
+    } catch (e) {
+      return response.status(500).json({
+        message: 'Internal Sever Error',
+        error: e.toString()
 
-    return response.status(200).json({
-      message: 'Memory have been deleted'
-    })
+      });
+    }
   }
 }
 
-export default MemoryDeleteController
+export default MemoryDeleteController;
