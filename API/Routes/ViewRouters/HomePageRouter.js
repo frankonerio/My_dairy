@@ -1,10 +1,8 @@
-import HomePageController from '../Controllers/HomePageController'
+import HomePageController from '../../Controllers/ViewController/HomePageController'
 import express from 'express'
 import path from 'path'
 
 const HomepageRouter = express.Router()
-
-HomepageRouter.use(express.static(path.join(__dirname, '..', '..', '/UI')))
 
 HomepageRouter.get('/', HomePageController.fetchHomePage)
 

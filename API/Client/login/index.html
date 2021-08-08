@@ -1,52 +1,79 @@
 <html>
+
 <head>
     <title>My Diary</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="../signup/index.css">
-    <link rel ="stylesheet" type = "text/css" href = "../assets/nav/nav.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel ="stylesheet" type = "text/css" href = "../nav/nav.css">
+
 </head>
+
 <body>
     <div class="nav">
         <div class="nav-header">
             <div class="nav-title">
-                <object data="svgs/diary1.svg" class="logo"></object>
+                <object data="../svgs/diary.svg" class="logo"></object>
             </div>
         </div>
+
+
         <div class="nav-btn">
             <input type="checkbox" id="nav-check">
+
             <label for="nav-check">
                 <span class="dashOne"></span>
                 <span class="dashTwo"></span>
                 <span class="dashThree"></span>
             </label>
+
             <ul class="nav-links">
-                <a href="../login/index.html">Login</a>
+                <a href="/signup">Sign Up</a>
             </ul>
+
         </div>
+
         </div>
+
     </div>
+
+
+
     <div class="container">
+
         <div class="loginForm">
+
             <form>
-                <h1 class="pageTitle">Sign up</h1>
+                <h1 class="pageTitle">Login</h1>
                 <div class="emailSection">
-                    <label for="Name" class="emailText">Name</label> <br>
-                    <input type="text" id="Name" name="Name" class="emailInput" placeholder="Please enter your name">
-                    <br>
-                </div>
-                <div class="emailSection">
+
                     <label for="email" class="emailText">Email</label> <br>
                     <input type="text" id="email" name="email" class="emailInput" placeholder="Please enter your email">
                     <br>
+
                 </div>
+
+
                 <div class="passwordSection">
                     <label for"password" class="passwordText">Password</label> <br>
                     <input type="text" id="password" name="password" class="passwordInput"
                         placeholder="Please enter your password"> <br>
+
                 </div>
-                <button type="submit" class="submitButton"><span class="submitButtonText">Sign up</span></button>
+
+
+
+                <button type="submit" class="submitButton"><span class="submitButtonText">Login</span></button>
+
+
             </form>
+
         </div>
+
     </div>
+
+
 </body>
-</html> 
+
+
+
+</html>
